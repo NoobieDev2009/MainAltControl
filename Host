@@ -1,25 +1,3 @@
-
-
-
-if game.PlaceId == 2788229376 then
-
-		
-local configs = {
-    main = {
-        enabled = true,
-        notifications = true
-	}
-}
-local CoreGui = game:GetService("StarterGui") 
-CoreGui:SetCore("SendNotification", {
- Title = "Welcome to FishControl!",
- Text = "Made By React#6041",
-Duration = 15;
-})
-if not game:IsLoaded() then
-	repeat wait() until game:IsLoaded()
-end
-
 local Testing = false
 -- Cmds
 if table.find(getgenv().Alts,game.Players.LocalPlayer.UserId) then
@@ -691,5 +669,5 @@ Services["Players"].PlayerAdded:Connect(function(Player)
 		Initiate()
 	end
 end)
-end
+
 
