@@ -210,20 +210,8 @@ local function BringPlr(Target,POS)
 	end
 end
 
-if getgenv().gui then
-	if getgenv().gui == true then
-
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Husam-Dev/altcontroller/main/gui.lua", true))()
-
-		configs.main.enabled = true
-		if configs.main.notifications == true then
-			game.StarterGui:SetCore("SendNotification", {
-				Title = "This is not my Gui",
-				Text = "Credits goes to husam, cosmo own gui coming soon!"
-			})
-		end
-
-	end
+if getgenv().Gui == true then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Husam-Dev/altcontroller/main/gui.lua", true))()
 end
 
 local BringLocations = {
