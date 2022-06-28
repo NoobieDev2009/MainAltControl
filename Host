@@ -1,20 +1,8 @@
 
+
+
 if game.PlaceId == 2788229376 then
-local Host = Services["Players"]:FindFirstChild(Variables["MainAcc"])
 
-if not Host then
-	print("Host is not here waiting for him to join!")
-	Services["Players"]:WaitForChild(Variables["MainAcc"],9e9)
-	Host = Services["Players"]:FindFirstChild(Variables["MainAcc"])
-end
-	print("Script loaded!")
-game.Players.PlayerAdded:Connect(function()
-
-	if not Host:IsInGroup(14927966) or not Host:IsInGroup(3533917) then
-Host:Kick("Join the group copied to clipboard")
-setclipboard("https://www.roblox.com/groups/14927966/Downside-Visual-Clothing#!/about")
-end
-end)
 		
 local configs = {
     main = {
@@ -105,6 +93,14 @@ local Variables = {
 	Player = game.Players.LocalPlayer,
 }
 
+local Host = Services["Players"]:FindFirstChild(Variables["MainAcc"])
+
+if not Host then
+	print("Host is not here waiting for him to join!")
+	Services["Players"]:WaitForChild(Variables["MainAcc"],9e9)
+	Host = Services["Players"]:FindFirstChild(Variables["MainAcc"])
+end
+print("Script loaded!")
 local CmdSettings = {}
 
 local function Drop(Type)
