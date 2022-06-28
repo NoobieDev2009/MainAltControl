@@ -537,15 +537,15 @@ local function Initiate()
 				if FoundPlayer then
 					BringPlr(FoundPlayer,nil)
 				end
-			elseif Message == ".setup b" then -- bank
+			elseif Message == ".setup bank" then -- bank
 				Setup("Bank")
-			elseif Message == ".setup a" then -- admin
+			elseif Message == ".setup admin" then -- admin
 				Setup("Admin")
-			elseif Message == ".setup c" then -- club
+			elseif Message == ".setup club" then -- club
 				Setup("Klub")
-			elseif Message == ".setup v" then -- vault
+			elseif Message == ".setup vault" then -- vault
 				Setup("Vault")
-			elseif Message == ".setup t" then -- train
+			elseif Message == ".setup train" then -- train
 				Setup("Train")
 			elseif Message == ".wallet on" then
 				ShowWallet()
@@ -649,5 +649,4 @@ Services["Players"].PlayerAdded:Connect(function(Player)
 		Initiate()
 	end
 end)
-
 
