@@ -384,7 +384,6 @@ local function Initiate()
 		local AmountOfArgs = #Args
 		if Host and not Crashed and Variables["Player"].Character and Variables["Player"].Character:FindFirstChild("HumanoidRootPart") and Variables["Player"].Character:FindFirstChild("Humanoid") and Variables["Player"].Character.Humanoid.Health > 0 then
 			if Args[1] == ".drop" then
-				game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Started Dropping.');
 				Drop(true)
 			elseif not CmdSettings["AdOn"] and Args[1] == ".ad" and Args[2] == "on" then
 				local newStr = string.gsub(Message, ".ad on", "")
@@ -494,8 +493,8 @@ local function Initiate()
 					setfpscap(60)	
 				end
 			elseif Args[1] == ".stop" then
-				game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Stopped Dropping.');
 				Drop(false)
+				game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Dropping disabled', 'All');
 			elseif Args[1] == ".reset" then
 				if Variables["Player"].Character then
 					local FULLY_LOADED_CHAR = Variables["Player"].Character:FindFirstChild("FULLY_LOADED_CHAR")
@@ -508,8 +507,10 @@ local function Initiate()
 				Initiate()
 			elseif Args[1] == ".airlock" then
 				AirLock(true)
+				game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Airlocked!', 'All');
 			elseif Args[1] == ".stop air" then
 				AirLock(false)
+				game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Airlock disabled', 'All');
 			elseif Message == ".bring" then
 				-- didnt feel the need for a function lmao
 				if Host and Host.Character and Host.Character:FindFirstChild("HumanoidRootPart") then
@@ -539,8 +540,10 @@ local function Initiate()
 				Setup("Train")
 			elseif Message == ".wallet on" then
 				ShowWallet()
+				game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Wallet on', 'All');
 			elseif Message == ".wallet off" then
 				RemoveWallet()
+				game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Wallet off!', 'All');
 			
 			elseif Message == ".maskon" then
 				local plr = game.Players.LocalPlayer
